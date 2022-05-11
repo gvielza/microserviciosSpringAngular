@@ -45,11 +45,11 @@ public class AlumnoController {
 			return ResponseEntity.notFound().build();
 		}
 		Alumno  alumnoDb=o.get();
-		alumnoDb.setNombre(alumnoDb.getNombre());
+		alumnoDb.setNombre(alumno.getNombre());
 
-		alumnoDb.setApellido(alumnoDb.getApellido());
-		alumnoDb.setEmail(alumnoDb.getEmail());
-		service.save(alumnoDb);
+		alumnoDb.setApellido(alumno.getApellido());
+		alumnoDb.setEmail(alumno.getEmail());
+		
 		return ResponseEntity.status(HttpStatus.CREATED).body(service.save(alumnoDb)); 
 	}
 	@DeleteMapping("/{id}")
